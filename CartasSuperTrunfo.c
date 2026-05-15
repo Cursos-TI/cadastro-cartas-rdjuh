@@ -57,31 +57,31 @@ int main() {
     densiB = populaB/areaB;
 
   //Cálculo de pib per capita
-    pibperA = pibA/populaA;
-    pibperB = pibB/populaB;
+    pibperA = (pibA*1000000000)/populaA;
+    pibperB = (pibB*1000000000)/populaB;
 
   // Área para exibição dos dados da cidade
     printf("\n*** Carta A ***\n"); //Carta A
     printf("Estado: %c\n", estadoA);
     printf("Codigo: %s\n", codigoA);
     printf("Nome da cidade: %s\n", cidadeA);
-    printf("Populacao: %d\n", populaA);
-    printf("Area: %f\n", areaA);
-    printf("PIB: %f\n", pibA);
+    printf("Populacao: %d pessoas\n", populaA);
+    printf("Area: %.2f km²\n", areaA);
+    printf("PIB: %.2f bilhões de reais\n", pibA);
     printf("Numero de pontos turisticos: %d\n", turismoA);
-    printf("Densidade populacional: %.2f\n", densiA);
-    printf("PIB per Capita: %.2f\n", pibperA);
+    printf("Densidade populacional: %.2f hab/km²\n", densiA);
+    printf("PIB per Capita: %.2f reais\n", pibperA);
 
     printf("\n*** Carta B ***\n"); //Carta B
     printf("Estado: %c\n", estadoB);
     printf("Codigo: %s\n", codigoB);
     printf("Nome da cidade: %s\n", cidadeB);
-    printf("Populacao: %d\n", populaB);
-    printf("Area: %f\n", areaB);
-    printf("PIB: %f\n", pibB);
+    printf("Populacao: %d pessoas\n", populaB);
+    printf("Area: %.2f km²\n", areaB);
+    printf("PIB: %.2f bilhões de reais\n", pibB);
     printf("Numero de pontos turisticos: %d\n", turismoB);
-    printf("Densidade populacional: %.2f\n", densiB);
-    printf("PIB per Capita: %.2f\n", pibperB);
+    printf("Densidade populacional: %.2f hab/km²\n", densiB);
+    printf("PIB per Capita: %.2f reais\n", pibperB);
   
     return 0;
 } 
