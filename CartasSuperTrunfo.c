@@ -11,13 +11,13 @@ int main() {
     char codigoA[4]; //Variável de código, cidade A
     char cidadeA[50]; //Variável de nome da cidade A
     int populaA, turismoA; //Variáveis de população e pontos turísticos, cidade A
-    float areaA, pibA, densiA, pibperA; //Variáveis de área e PIB, cidade A
+    float areaA, pibA, densiA, pibperA, superA; //Variáveis de área, desidade populacional, PIB, PIB per capita e super poder da cidade A
  
     char estadoB; //Variável de Estado, cidade B
     char codigoB[4]; //Variável de código, cidade B
     char cidadeB[50]; //Variável de nome da cidade B
     int populaB, turismoB; //Variáveis de população e pontos turísticos, cidade B
-    float areaB, pibB, densiB, pibperB; //Variáveis de área e PIB, cidade B
+    float areaB, pibB, densiB, pibperB, superB; //Variáveis de área e PIB, desidade populacional, PIB per capita e super poder da cidade B
 
   // Área para entrada de dados
     printf("Para a carta A:\n"); //Cadastro das informações, carta A
@@ -60,6 +60,10 @@ int main() {
     pibperA = (pibA*1000000000)/populaA;
     pibperB = (pibB*1000000000)/populaB;
 
+  //Cálculo de super poder
+    superA = (float)populaA + areaA + (pibA*1000000000) + (float)turismoA + pibperA + (1/densiA);
+    superB = (float)populaB + areaB + (pibB*1000000000) + (float)turismoB + pibperB + (1/densiB);
+
   // Área para exibição dos dados da cidade
     printf("\n*** Carta A ***\n"); //Carta A
     printf("Estado: %c\n", estadoA);
@@ -71,6 +75,7 @@ int main() {
     printf("Numero de pontos turisticos: %d\n", turismoA);
     printf("Densidade populacional: %.2f hab/km²\n", densiA);
     printf("PIB per Capita: %.2f reais\n", pibperA);
+    printf("Super poder: %.2f\n", superA);
 
     printf("\n*** Carta B ***\n"); //Carta B
     printf("Estado: %c\n", estadoB);
@@ -82,6 +87,17 @@ int main() {
     printf("Numero de pontos turisticos: %d\n", turismoB);
     printf("Densidade populacional: %.2f hab/km²\n", densiB);
     printf("PIB per Capita: %.2f reais\n", pibperB);
+    printf("Super poder: %.2f\n", superB);
+
+  //Comparação dos atributos
+    printf("\n*** Comparacao ***\n");
+    printf("Populacao: %d\n", populaA > populaB);
+    printf("Area: %d\n", areaA > areaB);
+    printf("PIB: %d\n", pibA > pibB);
+    printf("Numero de pontos turisticos: %d\n", turismoA > turismoB);
+    printf("Densidade populacional: %d\n", (1/densiA) > (1/densiB));
+    printf("PIB per Capita: %d\n", pibperA > pibperB);
+    printf("Super poder: %d\n", superA > superB);
   
     return 0;
 } 
